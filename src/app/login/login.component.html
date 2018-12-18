@@ -1,3 +1,12 @@
-<p>
-  login works!
-</p>
+<form class="login-form">
+  <mat-form-field class="login-input">
+    <input matInput placeholder="Логин" [formControl]="login" required>
+  </mat-form-field>
+
+  <mat-form-field class="login-input">
+    <input matInput type="password" placeholder="Пароль" [formControl]="pass" required>
+    <mat-error *ngIf="invalid">Ошибка входа</mat-error>
+  </mat-form-field>
+
+  <button mat-stroked-button color="primary" class="login-btn" (click)="tryLogin()">Войти</button>
+</form>
